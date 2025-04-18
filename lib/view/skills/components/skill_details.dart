@@ -10,6 +10,22 @@ class SkillStack extends StatelessWidget {
   SkillStack({super.key, required this.index});
   final int index;
   
+  Widget _buildIcon(String iconPath) {
+    if (iconPath.endsWith('.svg')) {
+      return SvgPicture.asset(
+        iconPath,
+        height: 40,
+        width: 40,
+      );
+    } else {
+      return Image.asset(
+        iconPath,
+        height: 40,
+        width: 40,
+      );
+    }
+  }
+  
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -30,11 +46,7 @@ class SkillStack extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    SvgPicture.asset(
-                      skillList[index].icon,
-                      height: 40,
-                      width: 40,
-                    ),
+                    _buildIcon(skillList[index].icon),
                     const SizedBox(width: defaultPadding),
                     Text(
                       skillList[index].name,

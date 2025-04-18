@@ -31,33 +31,13 @@ class ContactCard extends StatelessWidget {
           color: bgColor,
         ),
         duration: const Duration(milliseconds: 500),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SvgPicture.asset(
-              contactList[index].icon,
-              height: 40,
-              width: 40,
-              color: Colors.white,
-            ),
-            const SizedBox(height: defaultPadding),
-            Text(
-              contactList[index].title,
-              style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: defaultPadding / 2),
-            Text(
-              contactList[index].value,
-              style: const TextStyle(
-                color: Colors.grey,
-                height: 1.5,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ],
+        child: Center(
+          child: SvgPicture.asset(
+            contactList[index].icon,
+            height: 40,
+            width: 40,
+            color: Colors.white,
+          ),
         ),
       ),
     );
