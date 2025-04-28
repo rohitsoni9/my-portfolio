@@ -104,7 +104,8 @@ class Contact extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(defaultPadding * 2),
       child: Obx(() {
-        final testimonial = testimonialList[testimonialController.currentIndex.value];
+        final testimonial =
+            testimonialList[testimonialController.currentIndex.value];
         return MouseRegion(
           onEnter: (_) => testimonialController.setHover(true),
           onExit: (_) => testimonialController.setHover(false),
@@ -114,7 +115,7 @@ class Contact extends StatelessWidget {
               AnimatedContainer(
                 duration: const Duration(milliseconds: 500),
                 padding: const EdgeInsets.all(defaultPadding * 2),
-                height: 400,
+                height: 500,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   gradient: const LinearGradient(
@@ -126,12 +127,14 @@ class Contact extends StatelessWidget {
                     BoxShadow(
                       color: Colors.pink.withOpacity(0.3),
                       offset: const Offset(-2, 0),
-                      blurRadius: testimonialController.isHovered.value ? 20 : 10,
+                      blurRadius:
+                          testimonialController.isHovered.value ? 20 : 10,
                     ),
                     BoxShadow(
                       color: Colors.blue.withOpacity(0.3),
                       offset: const Offset(2, 0),
-                      blurRadius: testimonialController.isHovered.value ? 20 : 10,
+                      blurRadius:
+                          testimonialController.isHovered.value ? 20 : 10,
                     ),
                   ],
                 ),
@@ -152,26 +155,21 @@ class Contact extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: defaultPadding),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          testimonial.name,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
-                        ),
-                        const SizedBox(width: defaultPadding),
-                        Text(
-                          '${testimonial.role} at ${testimonial.company}',
-                          style: const TextStyle(
-                            color: Colors.white70,
-                            fontSize: 14,
-                          ),
-                        ),
-                      ],
+                    Text(
+                      testimonial.name,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
+                    const SizedBox(height: defaultPadding / 3),
+                    Text(
+                      '${testimonial.role} at ${testimonial.company}',
+                      style: const TextStyle(
+                        color: Colors.white70,
+                        fontSize: 14,
+                      ),
                     ),
                     const SizedBox(height: defaultPadding),
                     Row(
@@ -201,7 +199,8 @@ class Contact extends StatelessWidget {
                 right: 0,
                 child: IconButton(
                   onPressed: testimonialController.nextTestimonial,
-                  icon: const Icon(Icons.arrow_forward_ios, color: Colors.white),
+                  icon:
+                      const Icon(Icons.arrow_forward_ios, color: Colors.white),
                 ),
               ),
             ],

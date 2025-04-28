@@ -15,6 +15,7 @@ class AboutUs extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
       color: bgColor,
       child: SingleChildScrollView(
+        padding: const EdgeInsets.all(defaultPadding),
         child: Center(
           child: Container(
             constraints: const BoxConstraints(maxWidth: 1200),
